@@ -1,0 +1,1047 @@
+// VARIABLES Y TEMAS
+// Tema claro
+body:has(#theme-toggle:checked) {
+  --primary-color: #f8f9fa;
+  --secondary-color: #e9ecef;
+  --box-color: #dee2e6;
+  --text-color: #212529;
+  --secondary-text-color: #495057;
+  --footer-background: #343a40;
+  --card-background: #6c757d;
+  --white-color: #000000;
+  --place-holder-color: #6c757d;
+  --invalid-color: #dc3545;
+  --valid-color: #28a745;
+  --hover-navbar-color: #343a40;
+}
+
+// Tema oscuro (por defecto)
+:root {
+  --primary-color: #222831;
+  --secondary-color: #393e46;
+  --box-color: #474343;
+  --text-color: #dfd0b8;
+  --secondary-text-color: #b6ac98;
+  --footer-background: #212529;
+  --card-background: #948979;
+  --white-color: #ffffff;
+  --place-holder-color: #493f08;
+  --invalid-color: #d32f2f;
+  --valid-color: #000000;
+  --hover-navbar-color: #f5f5f5;
+}
+
+// Variables SASS
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$box-color: var(--box-color);
+$text-color: var(--text-color);
+$secondary-text-color: var(--secondary-text-color);
+$footer-background: var(--footer-background);
+$card-background: var(--card-background);
+$white: var(--white-color);
+$place-holder: var(--place-holder-color);
+$invalid: var(--invalid-color);
+$valid: var(--valid-color);
+$hover-navbar: var(--hover-navbar-color);
+
+// Colores iconos
+$color-html: #e34f26;
+$color-css: #1572b6;
+$color-js: #f7df1e;
+$color-react: #61dafb;
+$color-bootstrap: #7952b3;
+$color-tailwind: #38b2ac;
+$color-git: #f05032;
+$color-github: #ffffff;
+$color-discord: #5865f2;
+$color-sass: #cc6699;
+$phone-color: #81c784;
+$solid-color: #e27d7d;
+$email-color: #d44638;
+$ig-color: #e1306c;
+$wsp-color: #25d366;
+$ld-color: #0077b5;
+
+// Fuentes
+$font-primary: "Poppins", sans-serif;
+$font-tittles: "Trebuchet MS", sans-serif;
+
+// MIXINS Y EXTENDS
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $breakpoint == small-mobile {
+    @media (max-width: 360px) {
+      @content;
+    }
+  }
+}
+
+%btn-card-style {
+  display: inline-block;
+  padding: 15px;
+  margin-right: 5px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  background-color: $secondary-color;
+  color: $white;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// ESTILOS GENERALES
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*::selection {
+  background-color: $card-background;
+  color: $white;
+}
+
+body {
+  background: $primary-color;
+  font-family: $font-primary;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+
+// BOTÓN TOGGLE TEMA
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#theme-toggle {
+  display: none;
+}
+
+.theme-toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  background: var(--secondary-color);
+  border: 2px solid var(--text-color);
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: var(--text-color);
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+}
+
+#theme-toggle:checked + .theme-toggle-label {
+  &::after {
+    left: 32px;
+  }
+}
+
+// HEADER Y NAVEGACIÓN
+header {
+  width: 100%;
+  background-color: $primary-color;
+}
+
+.menu {
+  text-align: center;
+  width: 100%;
+  padding: 6px 10px;
+  overflow-x: auto;
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, $box-color, $secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    vertical-align: top;
+    transition: all 0.6s ease;
+
+    a {
+      color: $text-color;
+      font-weight: bolder;
+      font-size: 25px;
+      text-decoration: none;
+
+      &.active {
+        color: $hover-navbar;
+      }
+    }
+
+    &:hover {
+      background-color: $secondary-color;
+      transition: 600ms;
+
+      a {
+        color: $hover-navbar;
+      }
+    }
+  }
+}
+
+// TÍTULOS GENERALES
+.tittle_Home,
+.tittle_Aboutme,
+.tittle_Skills,
+.tittle_Qualifications,
+.tittle_Projects,
+.tittle_Contact {
+  color: $text-color;
+  font-family: $font-tittles;
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+// SECCIÓN HOME
+.homeintro {
+  height: 350px;
+  text-align: center;
+
+  .intro {
+    padding-top: 150px;
+    font-size: 34px;
+    color: $text-color;
+    font-weight: 800;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 6s steps(20, end) infinite, blink 1s step-end infinite;
+  }
+
+  .introtext {
+    color: $text-color;
+    font-size: 16px;
+    font-weight: 800;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 12ch;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.grid {
+  color: $white;
+  font-size: 17px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 2fr);
+  padding: 20px;
+
+  .grid-item {
+    padding: 15px 10px;
+    background: linear-gradient(145deg, $box-color, $secondary-color);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: appear 0.8s ease forwards;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    p {
+      display: flex;
+      flex-direction: row-reverse;
+      font-weight: bolder;
+      letter-spacing: 1px;
+      margin: 5px;
+      text-align: left;
+    }
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// SECCIÓN ABOUT ME
+.presentacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 150px auto 200px;
+  padding: 20px;
+  flex-direction: row-reverse;
+
+  h3 {
+    padding: 20px;
+    text-align: justify;
+    letter-spacing: 3px;
+  }
+
+  .texto {
+    flex: 1;
+    color: $text-color;
+  }
+
+  .foto {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img.me {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+// SECCIÓN SKILLS
+.py-4 {
+  background: linear-gradient(145deg, $box-color, $secondary-color);
+  border-radius: 20px;
+  min-height: 400px;
+  width: auto;
+  margin: 100px auto 200px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .btn {
+    padding: 12px 24px;
+    margin: 10px 5px;
+    border: solid 1.5px black;
+    border-radius: 10px;
+    transition: 600ms;
+
+    &:hover {
+      background: linear-gradient(145deg, $box-color, $secondary-color);
+      color: $white;
+      border-radius: 10px;
+      transition: 600ms;
+      border: solid 1.5px black;
+    }
+  }
+
+  .card-body {
+    width: 69vw;
+    color: $white;
+    border-radius: 10px;
+    background: linear-gradient(to left, $card-background 0%, #4a3a3a 100%);
+    border: 1.5px solid $white;
+  }
+
+  .collapsing {
+    display: none;
+  }
+}
+
+// SECCIÓN QUALIFICATIONS
+.qualifications-info {
+  h2 {
+    padding-top: 10vw;
+    color: $text-color;
+    text-align: center;
+    font-size: 34px;
+  }
+
+  h4 {
+    font-size: 16px;
+    color: $secondary-text-color;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-weight: 100;
+  }
+
+  p {
+    font-size: 16px;
+    color: $secondary-text-color;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .subtitle-academy {
+    font-size: 30px;
+    color: $text-color;
+    text-align: center;
+    padding: 0px;
+  }
+}
+
+.carousel {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  height: auto;
+  border-radius: 12px;
+
+  .carousel-inner {
+    height: 500px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// SECCIÓN PROJECTS
+.section-project {
+  margin-bottom: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .project-subtitle {
+    color: $text-color;
+    text-align: center;
+    font-size: 34px;
+    padding-top: 10%;
+  }
+
+  .h4-project {
+    font-size: 16px;
+    color: $secondary-text-color;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-weight: 100;
+  }
+
+  .imagen-sol {
+    object-fit: cover;
+    width: 600px;
+    margin: 20px 0 25px;
+    height: 200px;
+    border-radius: 20px;
+    border: 2px solid $white;
+    background: linear-gradient(145deg, $box-color, $secondary-color);
+  }
+
+  .card-sol {
+    display: flex;
+    background: transparent;
+    border: none;
+
+    .sol-card {
+      background: linear-gradient(
+        to left,
+        $card-background 0%,
+        $box-color 100%
+      );
+      background-size: cover;
+      width: 600px;
+      height: 200px;
+      border: 2px solid $white;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+
+      .contenido-card {
+        color: $white;
+        justify-content: right;
+        align-items: end;
+
+        h5 {
+          font-size: 30px;
+        }
+
+        .card-text {
+          color: $white;
+          font-size: 24px;
+        }
+
+        .btn-card {
+          padding: 15px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+// SECCIÓN CONTACT
+.contact_main {
+  .contact_section {
+    h2 {
+      color: $text-color;
+      text-align: center;
+      font-size: 34px;
+      padding-top: 10%;
+    }
+  }
+
+  .contact-info {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(145deg, $box-color, $secondary-color);
+    border-radius: 20px;
+    text-align: center;
+    color: $text-color;
+    padding-top: 5%;
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 16px;
+      color: $secondary-text-color;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+
+      .fa-phone {
+        color: $phone-color;
+      }
+
+      .fa-solid {
+        color: $solid-color;
+      }
+
+      .fa-envelope {
+        color: $email-color;
+      }
+    }
+
+    .map {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .icons-contact {
+      i {
+        color: $text-color;
+        font-size: 30px;
+        letter-spacing: 20px;
+
+        &.ig {
+          color: $ig-color;
+        }
+
+        &.wsp {
+          color: $wsp-color;
+        }
+
+        &.ld {
+          color: $ld-color;
+        }
+      }
+    }
+
+    form {
+      div {
+        .name,
+        .email {
+          width: 300px;
+          height: 38px;
+          margin-bottom: 40px;
+          margin-right: 20px;
+          text-align: left;
+        }
+
+        .email {
+          margin-top: 10px;
+
+          &:invalid {
+            color: $invalid;
+            font-size: 16px;
+          }
+
+          &:valid {
+            color: $valid;
+            font-size: 16px;
+          }
+        }
+
+        .name {
+          &:valid {
+            font-size: 16px;
+          }
+
+          &:invalid {
+            font-size: 16px;
+          }
+        }
+
+        .text {
+          width: 100%;
+          height: 80px;
+          text-align: left;
+
+          &::placeholder {
+            color: $place-holder;
+            padding: 20px;
+          }
+
+          &:valid,
+          &:invalid {
+            font-size: 18px;
+          }
+        }
+
+        .submit {
+          width: 268px;
+          height: 38px;
+          margin: 20px;
+        }
+      }
+    }
+  }
+}
+
+// INPUTS
+input {
+  height: auto;
+  padding: 12px 10px;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: $place-holder;
+    padding: 10px;
+  }
+}
+
+// ICONOS
+.fa-brands {
+  font-size: 24px;
+  padding: 2px;
+  margin: auto;
+}
+
+$tech-icons: (
+  "html5": $color-html,
+  "css3-alt": $color-css,
+  "js": $color-js,
+  "react": $color-react,
+  "bootstrap": $color-bootstrap,
+  "wind": $color-tailwind,
+  "git-alt": $color-git,
+  "github": $color-github,
+  "discord": $color-discord,
+  "sass": $color-sass,
+);
+
+@each $icon, $color in $tech-icons {
+  .fa-#{$icon} {
+    color: $color;
+    font-size: 24px;
+    padding: 2px;
+    margin: auto;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      transform: scale(1.3) rotate(10deg);
+      filter: brightness(1.2);
+      cursor: pointer;
+    }
+  }
+}
+
+.collapse div p {
+  text-align: center;
+}
+
+// FOOTER
+footer {
+  margin-top: auto;
+  background-color: $footer-background;
+
+  .footer-container {
+    padding: 32px 16px 16px;
+
+    .footer-title {
+      margin-bottom: 24px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .footer-contact {
+      margin-bottom: 32px;
+
+      .social-links {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+        justify-content: center;
+
+        a {
+          color: $white;
+          font-size: 24px;
+          transition: all 0.3s ease;
+          padding: 8px;
+          border-radius: 50%;
+          background-color: $box-color;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $secondary-text-color;
+            transform: translateY(-2px);
+          }
+        }
+      }
+
+      .contact-info {
+        text-align: center;
+
+        h4 {
+          color: $white;
+          margin-bottom: 8px;
+          font-size: 18px;
+        }
+
+        .footer-mail,
+        .footer-tel {
+          color: $white;
+          margin-bottom: 8px;
+
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #495057;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      .up-button {
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+      }
+
+      .copyright {
+        color: $white;
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// RESPONSIVE DESIGN
+@include respond-to(tablet) {
+  .menu li {
+    padding: 10px 8px;
+    margin-right: 4px;
+
+    a {
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .tittle_Projects {
+    font-size: 35px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .section-project {
+    margin-bottom: 100px;
+    padding: 0 20px;
+
+    .project-subtitle {
+      font-size: 26px;
+      padding-top: 5%;
+    }
+
+    .h4-project {
+      font-size: 14px;
+    }
+
+    .imagen-sol,
+    .sol-card {
+      padding: 0;
+      width: 95%;
+      max-width: 400px;
+      margin-top: 30px;
+      margin-left: 0;
+      background-color: #222831;
+      height: auto;
+    }
+
+    .contenido-card {
+      padding: 15px;
+
+      h5 {
+        font-size: 22px;
+      }
+
+      .card-text {
+        font-size: 16px;
+      }
+
+      .btn-card {
+        padding: 8px;
+        width: 70px;
+        font-size: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .presentacion {
+    flex-direction: column;
+    text-align: center;
+
+    .foto {
+      margin-top: 20px;
+    }
+
+    .texto {
+      h2 {
+        font-size: 26px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    img.me {
+      max-width: 250px;
+    }
+  }
+}
+
+@include respond-to(mobile) {
+  .menu li {
+    padding: 8px 6px;
+    margin-right: 3px;
+
+    a {
+      font-size: 14px;
+      letter-spacing: 0px;
+    }
+  }
+
+  .tittle_Projects {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .section-project {
+    margin-bottom: 80px;
+    padding: 0 15px;
+
+    .project-subtitle {
+      font-size: 24px;
+      padding-top: 4%;
+    }
+
+    .h4-project {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .imagen-sol,
+    .sol-card {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .sol-card .contenido-card {
+      padding: 0px;
+
+      h5 {
+        font-size: 18px;
+      }
+
+      .card-text {
+        font-size: 14px;
+      }
+
+      .btn-card {
+        padding: 1px;
+        width: 60px;
+        font-size: 10px;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .presentacion {
+    padding-top: 8%;
+
+    .me {
+      width: 250px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  .email,
+  .name {
+    width: 250px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .theme-toggle-container {
+    top: 10px;
+    right: 10px;
+
+    .theme-toggle-label {
+      width: 50px;
+      height: 25px;
+
+      &::after {
+        width: 19px;
+        height: 19px;
+        font-size: 10px;
+      }
+    }
+
+    #theme-toggle:checked + .theme-toggle-label::after {
+      left: 26px;
+    }
+  }
+}
+
+@include respond-to(small-mobile) {
+  .menu li {
+    padding: 6px 4px;
+    margin-right: 2px;
+    margin-bottom: 3px;
+
+    a {
+      font-size: 12px;
+      letter-spacing: 0px;
+    }
+  }
+
+  .tittle_Projects {
+    font-size: 24px;
+  }
+
+  .section-project {
+    margin-bottom: 60px;
+    padding: 0 10px;
+
+    .project-subtitle {
+      font-size: 20px;
+    }
+
+    .imagen-sol,
+    .sol-card {
+      max-width: 280px;
+      height: 120px;
+    }
+
+    .sol-card .contenido-card {
+      padding: 8px;
+
+      h5 {
+        font-size: 16px;
+      }
+
+      .card-text {
+        font-size: 12px;
+      }
+
+      .btn-card {
+        padding: 5px;
+        width: 50px;
+      }
+    }
+  }
+
+  .email,
+  .name {
+    width: 200px;
+  }
+
+  .footer-title {
+    font-size: 18px;
+  }
+}
