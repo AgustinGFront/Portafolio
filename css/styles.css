@@ -183,7 +183,7 @@ header {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 6s steps(20, end) infinite, blink 1s step-end infinite;
+  animation: typing 6s steps(20, end) infinite;
 }
 .homeintro .introtext {
   color: var(--text-color);
