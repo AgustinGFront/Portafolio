@@ -39,9 +39,11 @@
     <link rel="icon" type="image/x-icon" href="./favicon/apple-touch-icon.png">
 
     <!-- Fuentes -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-    <link rel="stylesheet" href="./fuentes/fonts.css">
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Librerías CSS externas -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -81,7 +83,6 @@
                 </li>
             </ul>
         </nav>
-        </div>
     </header>
     <div class="theme-toggle-container">
         <input type="checkbox" id="theme-toggle">
@@ -89,9 +90,10 @@
     </div>
     <div class="language-dropdown-container">
         <div class="dropdown">
-            <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            <button class="btn btn-outline-light dropdown-toggle language-btn" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <i class="bi bi-globe"></i> Language
+                <i class="bi bi-globe"></i>
+                <span class="lang-text">Language</span>
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html">🇺🇸 English</a></li>
@@ -99,6 +101,7 @@
             </ul>
         </div>
     </div>
+
     <main>
         <!-- Intro -->
         <div class="homeintro">

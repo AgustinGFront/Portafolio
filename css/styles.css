@@ -780,6 +780,32 @@ footer .footer-container .footer-bottom .copyright {
     font-size: 16px;
     letter-spacing: 0.5px;
   }
+  .language-dropdown-container {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: auto;
+    z-index: 1000;
+  }
+  .language-dropdown-container .dropdown {
+    display: block;
+    width: 80px;
+    height: 35px;
+    position: relative;
+  }
+  .language-dropdown-container .dropdown .language-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+    min-width: 70px;
+  }
+  .language-dropdown-container .dropdown .lang-text {
+    display: none;
+  }
+  .language-dropdown-container .dropdown .dropdown-menu {
+    left: 0;
+    right: auto;
+    min-width: 140px;
+  }
   .tittle_Projects {
     font-size: 35px;
   }
@@ -840,6 +866,22 @@ footer .footer-container .footer-bottom .copyright {
   .presentacion img.me {
     max-width: 250px;
   }
+  .theme-toggle-container {
+    top: 15px;
+    right: 15px;
+  }
+  .theme-toggle-container .theme-toggle-label {
+    width: 55px;
+    height: 28px;
+  }
+  .theme-toggle-container .theme-toggle-label::after {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+  .theme-toggle-container #theme-toggle:checked + .theme-toggle-label::after {
+    left: 28px;
+  }
 }
 @media (max-width: 480px) {
   .menu li {
@@ -849,6 +891,32 @@ footer .footer-container .footer-bottom .copyright {
   .menu li a {
     font-size: 14px;
     letter-spacing: 0px;
+  }
+  .language-dropdown-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: auto;
+    z-index: 1000;
+  }
+  .language-dropdown-container .dropdown {
+    display: block;
+    width: 60px;
+    height: 30px;
+    position: relative;
+  }
+  .language-dropdown-container .dropdown .language-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+    min-width: 50px;
+  }
+  .language-dropdown-container .dropdown .lang-text {
+    display: none;
+  }
+  .language-dropdown-container .dropdown .dropdown-menu {
+    left: 0;
+    right: auto;
+    min-width: 120px;
   }
   .tittle_Projects {
     font-size: 28px;

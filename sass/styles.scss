@@ -543,6 +543,7 @@ header {
         }
 
         .btn-card {
+          font-size: 18 px;
           padding: 15px;
           margin-right: 5px;
         }
@@ -863,6 +864,37 @@ footer {
     }
   }
 
+  .language-dropdown-container {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: auto;
+    z-index: 1000;
+
+    .dropdown {
+      display: block;
+      width: 80px;
+      height: 35px;
+      position: relative;
+
+      .language-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+        min-width: 70px;
+      }
+
+      .lang-text {
+        display: none;
+      }
+
+      .dropdown-menu {
+        left: 0;
+        right: auto;
+        min-width: 140px;
+      }
+    }
+  }
+
   .tittle_Projects {
     font-size: 35px;
   }
@@ -939,8 +971,27 @@ footer {
       max-width: 250px;
     }
   }
-}
 
+  .theme-toggle-container {
+    top: 15px;
+    right: 15px;
+
+    .theme-toggle-label {
+      width: 55px;
+      height: 28px;
+
+      &::after {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+      }
+    }
+
+    #theme-toggle:checked + .theme-toggle-label::after {
+      left: 28px;
+    }
+  }
+}
 @include respond-to(mobile) {
   .menu li {
     padding: 8px 6px;
@@ -949,6 +1000,37 @@ footer {
     a {
       font-size: 14px;
       letter-spacing: 0px;
+    }
+  }
+
+  .language-dropdown-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: auto;
+    z-index: 1000;
+
+    .dropdown {
+      display: block;
+      width: 60px;
+      height: 30px;
+      position: relative;
+
+      .language-btn {
+        padding: 5px 8px;
+        font-size: 12px;
+        min-width: 50px;
+      }
+
+      .lang-text {
+        display: none;
+      }
+
+      .dropdown-menu {
+        left: 0;
+        right: auto;
+        min-width: 120px;
+      }
     }
   }
 
