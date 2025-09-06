@@ -183,6 +183,14 @@ body {
   right: 100px;
   z-index: 1000;
 }
+.language-btn {
+  color: $text-color;
+  border: $text-color 1px solid;
+  &:hover {
+    color: $hover-navbar;
+    background-color: $box-color;
+  }
+}
 // HEADER Y NAVEGACIÓN
 header {
   width: 100%;
@@ -856,7 +864,70 @@ footer {
   }
 }
 
-// RESPONSIVE DESIGN
+// Añade estas reglas a tu archivo SASS existente
+
+// SECCIÓN SKILLS - Estilos base
+.py-4 {
+  background: linear-gradient(145deg, $box-color, $secondary-color);
+  border-radius: 20px;
+  min-height: 400px;
+  width: auto;
+  margin: 100px auto 200px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .container-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .d-inline-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+    }
+  }
+
+  .btn {
+    padding: 12px 24px;
+    margin: 10px 5px;
+    border: solid 1.5px black;
+    border-radius: 10px;
+    transition: 600ms;
+    min-width: 180px;
+    font-weight: 600;
+
+    &:hover {
+      background: linear-gradient(145deg, $box-color, $secondary-color);
+      color: $white;
+      border-radius: 10px;
+      transition: 600ms;
+      border: solid 1.5px black;
+    }
+  }
+
+  .card-body {
+    width: 69vw;
+    color: $white;
+    border-radius: 10px;
+    background: linear-gradient(to left, $card-background 0%, #4a3a3a 100%);
+    border: 1.5px solid $white;
+  }
+
+  .collapsing {
+    display: none;
+  }
+}
+
+// RESPONSIVE DESIGN MEJORADO
 @include respond-to(tablet) {
   .menu li {
     padding: 10px 8px;
@@ -907,6 +978,36 @@ footer {
     grid-template-columns: 1fr;
     gap: 15px;
     text-align: center;
+  }
+
+  // SKILLS RESPONSIVE PARA TABLET
+  .py-4 {
+    margin: 50px auto 100px;
+    padding: 25px;
+
+    .container-skills {
+      .d-inline-flex {
+        flex-direction: column;
+        gap: 15px;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 280px;
+      padding: 15px 20px;
+      margin: 0;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .card-body {
+      width: 90vw;
+      max-width: 500px;
+      margin: 20px auto 0;
+    }
   }
 
   .section-project {
@@ -996,6 +1097,7 @@ footer {
     }
   }
 }
+
 @include respond-to(mobile) {
   .menu li {
     padding: 8px 6px;
@@ -1041,6 +1143,42 @@ footer {
   .tittle_Projects {
     font-size: 28px;
     margin-bottom: 20px;
+  }
+
+  // SKILLS RESPONSIVE PARA MOBILE
+  .py-4 {
+    margin: 30px auto 80px;
+    padding: 20px;
+
+    .container-skills {
+      .d-inline-flex {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 250px;
+        margin: 0 auto;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 230px;
+      padding: 12px 16px;
+      margin: 0;
+      font-size: 14px;
+      text-align: center;
+      min-width: auto;
+    }
+
+    .card-body {
+      width: 95vw;
+      max-width: 350px;
+      margin: 15px auto 0;
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   .section-project {
@@ -1137,6 +1275,43 @@ footer {
 
   .tittle_Projects {
     font-size: 24px;
+  }
+
+  // SKILLS RESPONSIVE PARA SMALL MOBILE
+  .py-4 {
+    margin: 20px auto 60px;
+    padding: 15px;
+
+    .container-skills {
+      .d-inline-flex {
+        flex-direction: column;
+        gap: 10px;
+        max-width: 200px;
+        margin: 0 auto;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 190px;
+      padding: 10px 12px;
+      margin: 0;
+      font-size: 12px;
+      text-align: center;
+      min-width: auto;
+    }
+
+    .card-body {
+      width: 95vw;
+      max-width: 280px;
+      margin: 10px auto 0;
+      padding: 15px;
+
+      p {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+    }
   }
 
   .section-project {
