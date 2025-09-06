@@ -618,26 +618,6 @@ header {
       border-radius: 10px;
     }
 
-    .icons-contact {
-      i {
-        color: $text-color;
-        font-size: 30px;
-        letter-spacing: 20px;
-
-        &.ig {
-          color: $ig-color;
-        }
-
-        &.wsp {
-          color: $wsp-color;
-        }
-
-        &.ld {
-          color: $ld-color;
-        }
-      }
-    }
-
     form {
       div {
         .name,
