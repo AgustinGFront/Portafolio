@@ -1,8 +1,8 @@
 # Agustín Godoy – Frontend Web Developer 🚀
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-brightgreen?style=for-the-badge&logo=vercel)](https://portafolio-agustin-entrega-final.vercel.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Agustín%20Godoy-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/agustin-godoy)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/agustin-godoy)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Agustín%20Godoy-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/agustin-godoy-5846771a8)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/AgustinGFront)
 
 ---
 
@@ -72,12 +72,70 @@ Continuar creciendo como desarrollador frontend, compartir mi progreso y forjar 
 
 <div align="center">
  
-![Agustín's GitHub stats](https://github-readme-stats.vercel.app/api?username=agustin-godoy&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=5BCDEC&text_color=FFFFFF&icon_color=5BCDEC)
+![Agustín's GitHub stats](https://github-readme-stats.vercel.app/api?username=AgustinGFront&show_icons=true&theme=react&hide_border=true&bg_color=0D1117&title_color=5BCDEC&text_color=FFFFFF&icon_color=5BCDEC)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=agustin-godoy&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=5BCDEC&text_color=FFFFFF)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AgustinGFront&layout=compact&theme=react&hide_border=true&bg_color=0D1117&title_color=5BCDEC&text_color=FFFFFF)
 
 </div>
 
 ---
 
 ## 📂 Estructura del proyecto (Portfolio)
+
+portfolio/
+├── 📁 Images/ # Assets e imágenes del portfolio
+│ ├── 1.jpg # Imagen principal
+│ ├── 2.jpg # Imagen de galería
+│ ├── 3.jpg # Imagen de galería
+│ └── 4.jpg # Imagen de galería
+├── 📁 css/ # Archivos de estilos
+│ └── styles.css # Estilos principales
+├── 📁 js/ # Scripts JavaScript
+│ └── main.js # Funcionalidades interactivas
+├── index.html # Página principal
+└── README.md # Este archivo
+
+---
+
+## 🎓 Formación académica
+
+- **🎓 Ingeniería en Informática** (En curso)
+- **💻 Frontend Development** - Aprendizaje autodidacta y cursos especializados (CoderHouse)
+- **📚 Desarrollo web moderno** - HTML5, CSS3, JavaScript ES6+
+
+---
+
+## 🌱 Próximos pasos
+
+- [ ] Integrar **React** en nuevos proyectos
+- [ ] Aprender **TypeScript** para desarrollo más robusto
+- [ ] Explorar **Node.js** para desarrollo full-stack
+- [ ] Implementar **testing** con Jest
+- [ ] Crear proyectos con **APIs REST**
+
+---
+
+## 📬 Contacto
+
+¿Interesado en colaborar o tienes alguna pregunta?
+
+- 💼 **Portfolio:** [portafolio-agustin-entrega-final.vercel.app](https://portafolio-agustin-entrega-final.vercel.app)
+- 📧 **Email:** agusgodoyds@gmail.com
+- 🔗 **LinkedIn:** [linkedin.com/in/agustin-godoy]https://www.linkedin.com/in/agustin-godoy-5846771a8
+- 🐙 **GitHub:** [github.com/AgustinGFront](https://github.com/AgustinGFront)
+
+---
+
+<div align="center">
+  
+### 💡 "*Este sitio fue diseñado para mostrar quién soy, qué estoy aprendiendo y cómo aplicar mis conocimientos en proyectos del mundo real.*"
+
+**⭐ Si te gusta mi trabajo, no olvides darle una estrella al repositorio**
+
+![Visitor Count](https://komarev.com/ghpvc/?username=AgustinGFront&color=5BCDEC&style=flat-square&label=Visitas%20al%20perfil)
+
+</div>
+
+---
+
+_Desarrollado con ❤️ por Agustín Godoy | Frontend Developer in training_
